@@ -1,10 +1,16 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/home'
+import CreateUser from './pages/create'
+import User from './pages/user'
 
-const App: React.FC = function App() {
+const App: React.FC = () => {
     return (
-        <div>
-            <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        </div>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create" element={<CreateUser />} />
+            <Route path="/users/:id" element={<User />} />
+        </Routes>
     )
 }
 
